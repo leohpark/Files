@@ -1,0 +1,969 @@
+version: 4
+data:
+  attachedData:
+    trivet:
+      testSuites: []
+      version: 1
+  graphs:
+    b6q5klW4_sexIOaCw6Wmg:
+      metadata:
+        description: ""
+        id: b6q5klW4_sexIOaCw6Wmg
+        name: Doc chunk and summarizer
+      nodes:
+        '[FeY7BVh4of4NuSq_d1AeZ]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 670.2582800455474
+            text: >-
+              #### 2. This is the Document splitter. It is very easy to use.
+
+              ##### It can also return first/last chunk as a form of text truncating, and tracks indices and counts for passing on to next steps.
+
+
+              ##### I assume "model" is the tokenizer. All of the included GPT models use the same tokenizer, and there is a plugin for Anthropic which might provide more.
+          visualData: 621.4910353664369/-310.7168141498061/409.7171582099759/160
+        '[QQe5iEiWKXid2jYFXRNTB]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 697.3226644621574
+            text: >-
+              #### 3. These Nodes have "split" enabled, as shown by the little
+              icon next to their names.
+
+
+              ##### Each behaves like a "stack" of operations that occur in parallel. in this case, a stack of Text Nodes for each document Chunk received, a stack of Chat API calls for each Text Node, and a stack of Text Nodes to collect the API repsonses. The output is stored as an array most of the time, then processed further. 
+          visualData: 1036.2100495241818/-309.74100470472905/973.4614764913053/162
+        '[ThqGIxtWpXglesYLSL1gh]:chunk "Chunk"':
+          data:
+            model: gpt-3.5-turbo
+            numTokensPerChunk: 1024
+            overlap: 5
+            useModelInput: false
+          outgoingConnections:
+            - chunks->"Text" gLuOSTWr411YV59Bf97G3/text
+            - count->"Text" gLuOSTWr411YV59Bf97G3/count
+            - count->"Text" rN8yhHHSjwpvU78OYp6v-/count
+            - indexes->"Text" gLuOSTWr411YV59Bf97G3/indice
+            - indexes->"Text" rN8yhHHSjwpvU78OYp6v-/indice
+          visualData: 668.0867400779275/62.84806645573458/318/152
+        '[Wx1US3Mm3U6CqfIcgSMmL]:text "Sample Document"':
+          data:
+            text: >
+              1
+
+              2
+
+              3
+
+              4
+
+              5
+
+              6
+
+              7
+
+              8 UNITED STATES DISTRICT COURT
+
+              9 NORTHERN DISTRICT OF CALIFORNIA
+
+              10 San Francisco Division
+
+              11	Case No. 3:22-cv-05567-LB
+
+              12 ORDER DISMISSING COMPLAINT
+
+              13 Re: ECF Nos. 25, 30
+
+              14
+
+              15
+
+              16
+
+              17 INTRODUCTION
+
+              18 Defendant YouTube terminated plaintiff Joseph Mercola’s YouTube channel for violating
+
+              19 YouTube’s Community Guidelines by posting medical misinformation about COVID-19 and
+
+              20 vaccines. Mr. Mercola and his company then sued the defendants, claiming that the termination
+
+              21 breaches YouTube’s terms of service, violates the implied covenant of good faith and fair dealing,
+
+              22 entitles them to restitution, and constitutes conversion of their video content. They seek monetary
+
+              23 relief and access to the video content.1 The court grants the defendants’ Rule 12(b)(6) motion to
+
+              24 dismiss: the parties’ agreement allows YouTube to remove the content and precludes damages. 25
+
+              26
+
+              27
+
+              1 Am. Compl. – ECF No. 21. Citations refer to material in the Electronic Case File (ECF); pinpoint
+
+              28	citations are to the ECF-generated page numbers at the top of documents.
+
+
+
+
+
+
+              1 STATEMENT
+
+              2 YouTube is an online video-sharing and social-media platform where users can watch, share,
+
+              3 comment on, and upload videos.2 To use YouTube, users agree to the Terms of Service and
+
+              4 YouTube’s Community Guidelines (collectively, the Agreement).3 There are several provisions
+
+              5 relevant to the motion.
+
+              6 First, there are provisions about YouTube’s hosting of content.
+
+              7 Under the provision titled “Content on the Service,” the Terms state, “YouTube is under no
+
+              8 obligation to host or serve Content.”4
+
+              9 The section titled “Your Content and Conduct” discusses uploading content, the requirement
+
+              10 that content complies with the Terms, the Community Guidelines, and the law, the content
+
+              11 provider’s ownership of the content, YouTube’s right to use the content, other YouTube users’
+
+              12 right to access the content, and a provision titled “Duration of License.” The last provision states:
+
+              13 “The licenses granted by you continue for a commercially reasonable period of time after you
+
+              14 remove or delete your Content from the Service. You understand and agree, however, that
+
+              15 YouTube may retain, but not display, distribute, or perform, servicer copies of your videos that
+
+              16 have been removed or deleted.”5
+
+              17 Under the provision titled “Removal of Content,” the Terms state: “If we reasonably believe
+
+              18 that any Content is in breach of this Agreement or may cause harm to YouTube, our users, or third
+
+              19 parties, we may remove or take down that Content in our discretion.”6
+
+              20 Second, the Terms contain a “Limitation on Liability:”
+
+              21 Except as required by applicable law, YouTube, its affiliates, officers, directors, employees and agents will not be responsible for any loss of profits, revenues,
+
+              22
+
+              23
+
+              24	2 Id. at 2 (¶ 1).
+
+              25	3 Id. at 3 (¶¶ 7–8).
+
+              4 Terms of Serv., Ex. A to Lerner Decl. – ECF No. 25-2 at 5 (p.4). The complaint cites and quotes the
+
+              26 Terms. See, e.g., Am. Compl. – ECF No. 21 at 9 (¶ 38). The court considers the Terms and Guidelines under the incorporation-by-reference doctrine. Knievel v. ESPN, 393 F.3d 1068, 1076 (9th Cir. 2005).
+
+              27 5 Terms of Serv., Ex. A to Lerner Decl. – ECF No. 25-2 at 9–10 (pp. 8–9).
+
+              28	6 Id. at 10–11 (pp. 9–10).
+
+
+
+
+
+
+              business opportunities, goodwill, or anticipated savings; loss or corruption of data;
+
+              1 indirect or consequential loss; [or] punitive damages caused by:
+
+              2 1. errors, mistakes, or inaccuracies on the service;
+
+              3 2. personal injury or property damage resulting from your use of the service;
+
+              4 3. any unauthorized access to or use of the service;
+
+              4. any interruption or cessation of the service;
+
+              5
+
+              5. any viruses or malicious code transmitted to or through the service by any
+
+              6 third party;
+
+              7 6. any content whether submitted by a user or YouTube, including your use of content; and/or
+
+              8 7. the removal or unavailability of any content.
+
+              9 This provision applies to any claim, regardless of whether the claim asserted is
+
+              10 based on warranty, contract, tort, or any other legal theory.
+
+              YouTube and its affiliates’ total liability for any claims arising from or relating to
+
+              11 the service is limited to the greater of: (A) the amount of revenue that YouTube has
+
+              12 paid to you from your use of the service in the 12 months before the date of your notice, in writing to YouTube, of the claim; and (B) USD $500.7
+
+              13
+
+              14 Third, the Terms have a provision titled, “Modifying this Agreement:”
+
+              15 We may modify this Agreement, for example, to reflect changes to our Service or for legal, regulatory, or security reasons. YouTube will provide reasonable advance
+
+              16 notice of any material modifications to this Agreement and the opportunity to review them, except that modifications addressing newly available features of the
+
+              17 Service or modifications made for legal reasons may be effective immediately
+
+              18 without notice. Modifications to this Agreement will only apply going forward. If you do not agree to the modified terms, you should remove any Content you have
+
+              19 uploaded and discontinue your use of the Service.8
+
+              20 Fourth, YouTube’s Community Guidelines describe content that is not allowed on YouTube.9
+
+              21 That includes medical misinformation, including “content about COVID-19 that poses a serious
+
+              22 risk of egregious harm” and COVID-19 vaccine misinformation.10
+
+              23 Fifth, the Community Guidelines outline an enforcement process: 24
+
+
+              25 7 Id. at 13–14 (pp. 12–13); Am. Compl. – ECF No. 21 at 12–13 (¶ 51). The entire provision is in capital letters.
+
+              26 8 Am. Compl. – ECF No. 21 at 9 (¶¶ 38–41); Terms of Serv., Ex. A to Lerner Decl. – ECF No. 25-2 at 15 (p. 14).
+
+              27	9 Am. Compl. – ECF No. 21 at 3 (¶ 8), 10 (¶ 43).
+
+              28	10 Cmty. Guidelines, Exs. E–F to Lerner Decl. – ECF Nos. 25-6 to 25-7.
+
+
+
+
+
+
+              If your content violates this policy, we’ll remove the content and send you an email
+
+              1 to let you know. If this is your first time violating our Community Guidelines,
+
+              2 you’ll likely get a warning with no penalty to your channel. If it’s not, we may issue a strike against your channel. If you get 3 strikes within 90 days, your channel
+
+              3 will be terminated. You can learn more about our strikes system here.
+
+              4 	We may terminate your channel or account for repeated violations of the Community Guidelines or Terms of Service. We may also terminate your channel
+
+              5 or account after a single case of severe abuse, or when the channel is dedicated to a policy violation. You can learn more about channel or account terminations here.11
+
+              6
+
+              7 Dr. Mercola is a physician who had a substantial YouTube following: he began sharing video
+
+              8 content in 2005 and by September 2021 had over 300,000 subscribers and fifty-million views.12
+
+              9 On September 29, 2021, YouTube terminated the account and sent a notice explaining the grounds
+
+              10 for termination: “We have reviewed your content and found severe or repeated violations of our
+
+              11 Community Guidelines	This account has been terminated due to multiple or severe violations
+
+              12 of YouTube’s policies on Medical Misinformation.” The notice had a link to appeal the decision.13
+
+              13 That day, the Washington Post published an article titled “YouTube is banning Joseph Mercola
+
+              14 and a handful of other anti-vaccine activists.” It had this introduction:
+
+              15 YouTube is taking down several video channels associated with high-profile anti- vaccine activists including Joseph Mercola . . . .
+
+              16
+
+              As part of a new set of policies aimed at cutting down on anti-vaccine content
+
+              17 on the Google-owned site, YouTube will ban any videos that claim that commonly used vaccines approved by health authorities are ineffective or dangerous. The
+
+              18 company previously blocked videos that made those claims about coronavirus
+
+              19 vaccines, but not ones for other vaccines like those for measles or chickenpox.14
+
+              20 YouTube denied the plaintiffs’ appeal that followed: “We reviewed your channel carefully,
+
+              21 and have confirmed that it violates our Community Guidelines	We won’t be putting your
+
+              22 channel back up on YouTube.”15
+
+              23
+
+              24
+
+              11 Am. Compl. – ECF No. 21 at 11 (¶ 44); Cmty. Guidelines, Ex. F to Lerner Decl. – ECF No. 25-7 at
+
+              25	4 (p. 3).
+
+              26	12 Am. Compl. – ECF No. 21 at 2–3 (¶¶ 5–6, 9–10).
+
+              13 Id. at 3 (¶ 10), 6 (¶ 24).
+
+              27	14  Id. at 5 (¶ 19).
+
+              28	15 Id. at 8 (¶ 33).
+
+
+
+
+
+
+              1 The operative complaint has six claims: (1) breach of contract by failing to provide advance
+
+              2 notice of the vaccine-misinformation policy before terminating the channel and account; (2)
+
+              3 breach of contract by failing to warn the plaintiffs before the termination; (3) breach of the implied
+
+              4 covenant of good faith and fair dealing; (4) specific performance to allow ongoing use of the
+
+              5 platform and access to the content; (5) unjust enrichment by retaining the content; and (6)
+
+              6 conversion by retaining the content.16
+
+              7 The court has diversity jurisdiction: the parties are diverse and the amount in controversy
+
+              8 exceeds $75,000. 28 U.S.C. § 1332(a). All parties consented to magistrate-judge jurisdiction under
+               9 28 U.S.C. § 636.17 The court held a hearing on July 13, 2023. 10
+              11 STANDARD OF REVIEW
+
+              12 A complaint must contain a “short and plain statement of the claim showing that the pleader is
+
+              13 entitled to relief” to give the defendant “fair notice” of (1) what the claims are and (2) the grounds
+
+              14 upon which they rest. Fed. R. Civ. P. 8(a)(2); Bell Atl. Corp. v. Twombly, 550 U.S. 544, 555
+
+              15 (2007). Thus, “[a] complaint may fail to show a right to relief either by lacking a cognizable legal
+
+              16 theory or by lacking sufficient facts alleged under a cognizable legal theory.” Woods v. U.S. Bank
+
+              17	N.A., 831 F.3d 1159, 1162 (9th Cir. 2016).
+
+              18 A complaint does not need detailed factual allegations, but “a plaintiff’s obligation to provide
+
+              19 the ‘grounds’ of his ‘entitlement to relief’ requires more than labels and conclusions, and a
+
+              20 formulaic recitation of the elements of a cause of action will not do. Factual allegations must be
+
+              21 enough to raise a right to relief above the speculative level.” Twombly, 550 U.S. at 555 (cleaned
+
+              22 up). A complaint must contain factual allegations that, when accepted as true, are sufficient to
+
+              23 “state a claim to relief that is plausible on its face.” Ashcroft v. Iqbal, 556 U.S. 662, 678 (2009);
+
+              24 NorthBay Healthcare Grp., Inc. v. Kaiser Found. Health Plan, Inc., 838 F. App’x 231, 234 (9th
+
+              25 Cir. 2020). “[O]nly the claim needs to be plausible, and not the facts themselves	” NorthBay,
+
+              26
+
+
+              27	16 Id. at 15–20 (¶¶ 65–113).
+
+              28	17 Consents – ECF Nos. 12, 19.
+
+
+
+
+
+
+              1 838 F. App’x at 234 (citing Iqbal, 556 U.S. at 696); see Interpipe Contracting, Inc. v. Becerra,
+
+              2 898 F.3d 879, 886–87 (9th Cir. 2018) (the court must accept the factual allegations in the
+
+              3 complaint “as true and construe them in the light most favorable to the plaintiff”) (cleaned up).
+
+              4 Put another way, “[a] claim has facial plausibility when the plaintiff pleads factual content that
+
+              5 allows the court to draw the reasonable inference that the defendant is liable for the misconduct
+
+              6 alleged.” Iqbal, 556 U.S. at 678. “The plausibility standard is not akin to a ‘probability
+
+              7 requirement,’ but it asks for more than a sheer possibility that a defendant has acted unlawfully.”
+
+              8 Id. “Where a complaint pleads facts that are merely consistent with a defendant’s liability, it stops
+
+              9 short of the line between possibility and plausibility of ‘entitlement to relief.’” Id. (cleaned up).
+
+              10 If a court dismisses a complaint because of insufficient factual allegations, it should give leave
+
+              11 to amend unless “the pleading could not possibly be cured by the allegation of other facts.” Cook,
+
+              12 Perkiss & Liehe, Inc. v. N. Cal. Collection Serv. Inc., 911 F.2d 242, 247 (9th Cir. 1990). If a court
+
+              13 dismisses a complaint because its legal theory is not cognizable, the court should not give leave to
+
+              14 amend. United States v. United Healthcare Ins. Co., 848 F.3d 1161, 1184 (9th Cir. 2016); see
+
+              15 Steele-Klein v. Int’l Bhd. of Teamsters, Loc. 117, 696 F. App’x 200, 202 (9th Cir. 2017) (leave to
+
+              16 amend may be appropriate if the plaintiff “identifie[s] how she would articulate a cognizable legal
+
+              17 theory if given the opportunity”).
+
+              18 ANALYSIS
+
+              19 In their opposition, the plaintiffs define their case more narrowly than they do in the
+
+              20 complaint: the plaintiffs say that they do not challenge YouTube’s right to deny them a platform
+
+              21 and instead challenge YouTube’s preventing them from accessing their content.18 The sum of it is
+
+              22 that they want the content back. YouTube moves to dismiss all claims on three grounds: (1) the
+
+              23 plaintiffs did not plausibly allege a breach of contract; (2) a limitation-on-liability provision
+
+              24 applies to the claims and forecloses damages on contract and tort theories; and (3) Section 230(c) 25
+
+              26 18 Opp’n – ECF No. 28 at 6. Count IV asks for specific performance in the form of ongoing use of the platform. Am. Compl. – ECF No. 21 at 19 (¶ 102). The prayer for relief asks for specific performance
+
+              27 of the agreement “in a manner deemed appropriate by the Court and including at least Mercola’s access to its video content, the value of which exceeds $75,000.” Id. at 20 (¶ 114). The plaintiffs have
+
+              28 narrowed their claim for relief to access to the video content.
+
+
+
+
+
+
+              1 of the Communications Decency Act bars the claims. The court grants the motion because the
+
+              2 plaintiffs did not plausibly allege a breach and in any event, the limitation on liability forecloses
+
+              3 damages. 4
+
+              5 1. Contract Claims
+
+              6 Under California law, the elements of a breach-of-contract claim are: “(1) the existence of the
+
+              7 contract, (2) plaintiff’s performance or excuse for nonperformance, (3) defendant’s breach, and (4)
+
+              8 the resulting damages to the plaintiff.” Oasis W. Realty, LLC v. Goldman, 51 Cal. 4th 811, 821,
+
+              9 (2011) (cleaned up). “And if defendants were given the right to do what they did by the express
+
+              10 provisions of the contract, there can be no breach.” Carma Devs. (Cal.) Inc. v. Marathon Dev.
+
+              11	Cal., Inc., 2 Cal. 4th 342, 374 (1992).
+
+              12 As set forth in the Statement, YouTube had no obligation to host or serve content. The main
+
+              13 issue is that the plaintiffs want access to the content. But no provision of the Agreement provides a
+
+              14 right to access that content under the circumstances here: termination for cause under the
+
+              15 agreement. In a different context, there is an avenue to export content: if YouTube terminates a
+
+              16 user’s access for service changes, it gives the user sufficient time to export content, where
+
+              17 reasonably possible.19 But that provision on its face does not apply here. The plaintiffs thus do not
+
+              18 plead contract or quasi-contract claims related to denial of access to their content.
+
+              19 Similarly, as set forth in the Statement, YouTube had the discretion to take down content that
+
+              20 harmed its users. The content here violated the Community Guidelines. Modifications to the
+
+              21 Community Guidelines — such as the modification here to elaborate on YouTube’s existing
+
+              22 prohibitions on medical misinformation to add COVID-19 and vaccines — could be effective
+
+              23 immediately, without notice. YouTube had the discretion to terminate channels without warning
+
+              24 after a single case of severe abuse. Under the contract, this determination was discretionary: the 25
+
+              26
+
+              27
+
+              28	19 Terms of Serv., Ex. A to Lerner Decl. – ECF No. 25-2 at 12 (p. 11).
+
+
+
+
+
+
+              1	contract said that “[i]f we reasonably believe that any Content is in breach of this agreement or
+
+              2	may cause harm, . . . we may remove or take down that Content in our discretion.”20
+
+              3	Cases confirm that YouTube can revoke access at its discretion. See, e.g., Daniels v. Alphabet
+
+              4	Inc., No. 20-cv-04687-VKD, 2021 WL 1222166, at *2 (N.D. Cal. Mar. 31, 2021) (identical
+
+              5 language in YouTube’s Terms foreclosed a breach-of-contract claim premised on YouTube’s
+
+              6 removal of a video titled “Fauci Silenced Dr. Judy Mikovits from Warning the American Public”);
+
+              7 Song fi Inc. v. Google, Inc., 108 F. Supp. 3d 876, 881, 885 (N.D. Cal. 2015) (identical language
+
+              8 foreclosed breach-of-contract claim premised on YouTube’s removal of a video with an inflated
+
+              9 view count).
+
+              10 Cases also confirm that the Terms do not give the plaintiffs a right of access to content from a
+
+              11 terminated account. In Lewis v. YouTube, LLC, 244 Cal. App. 4th 118 (2015), YouTube terminated
+
+              12 a user’s account and then restored it, but some content allegedly was destroyed when the account
+
+              13 was disabled. The plaintiff sued for breach of contract and sought either restoration of the channel
+
+              14 or damages. Id. at 121–23, 126–27. The court found no breach because “there is no provision in the
+
+              15 Terms of Service that requires YouTube to maintain particular content” or be a “storage site for
+
+              16 users’ content.” Id. at 126–27. Similarly, in King v. Facebook, Inc., a user sued for breach of
+
+              17 contract after Facebook disabled her account and deleted its content. She alleged that Facebook
+
+              18 breached its terms of service by destroying content associated with the account. 572 F. Supp. 3d
+
+              19 776, 780–81 (N.D. Cal. 2021). The court held that there was no breach: no provision in the
+
+              20 agreement obligated Facebook to retain content, and destroying content did not “injure a user’s core
+
+              21 contractual right — the right to use Facebook’s social media platform.” Id. at 787–88.
+
+              22 The plaintiffs distinguish Lewis and King on the ground that the plaintiffs there sought
+
+              23 different relief: the Mercola plaintiffs want an opportunity to access and remove their content,
+
+              24 whereas the Lewis plaintiff challenged YouTube’s failure to include their videos on the platform,
+
+              25 and the King plaintiff alleged that “Facebook had an obligation to retain content.”21 But all of 26
+
+
+              27	20 See supra Statement.
+
+              28	21 Opp’n – ECF No. 28 at 16–17, 26 n.16.
+
+
+
+
+
+
+              1 these cases are about access to content and a claim that the platforms wrongfully deleted content
+
+              2 before the user could preserve it or denied access to it. Lewis, 244 Cal. App. 4th at 126 (“YouTube
+
+              3 wrongfully deleted her videos”); King, 572 F. Supp. 3d at 787 (“after disabling her account,
+
+              4 Facebook destroyed content”).
+
+              5 This analysis forecloses the claim for specific performance in the form of access to the content.
+
+              6 In addition, the limitation-on-liability provision precludes damages attributable to any
+
+              7 interruption or cessation of the service or the removal or unavailability of any content.
+
+              8 In sum, the plaintiffs do not plausibly plead claims for breach of contract. 9
+
+              10 2. Breach of Implied Covenant of Good Faith and Fair Dealing
+
+              11 The plaintiffs also claim that the defendants breached the implied covenant of good faith and
+
+              12 fair dealing.22 The claim is duplicative of the contract claims: it is about YouTube’s failure to
+
+              13 warn and failure to allow the plaintiffs to access the content.23
+
+              14 The covenant of good faith and fair dealing is implied in every contract and prevents one party
+
+              15 from “unfairly frustrating the other party’s right to receive the benefits” of the contract. Guz v.
+
+              16 Bechtel Nat’l Inc., 24 Cal. 4th 317, 349 (2000). To allege a claim for breach of the covenant of
+
+              17 good faith and fair dealing, a plaintiff must allege the following elements: (1) the plaintiff and the
+
+              18 defendant entered into a contract; (2) the plaintiff did all or substantially all of the things that the
+
+              19 contract required her to do or she was excused from having to do; (3) all conditions required for
+
+              20 the defendant’s performance had occurred; (4) the defendant unfairly interfered with the plaintiff’s
+
+              21 right to receive the benefits of the contract; and (5) the defendant’s conduct harmed the plaintiff.
+
+              22 Qingdao Tang-Buy Int’l Import & Export Co. v. Preferred Secured Agents, Inc., No. 15-cv-00624-
+
+              23 LB, 2016 WL 6524396, at *5 (N.D. Cal. Nov. 3, 2016) (citing Judicial Council of California Civil
+
+              24 Jury Instructions § 325 (2011); Oculus Innovative Scis., Inc. v. Nofil Corp., No. C 06-01686 SI, 25	2007 WL 2600746, at *4 (N.D. Cal. Sept. 10, 2007)).
+
+              26
+
+
+              27	22 Am. Compl. – ECF No. 21 at 17–18 (¶¶ 85–92).
+
+              28	23 Id. at 17–18 (¶ 90).
+
+
+
+
+
+
+              1 Again, YouTube’s actions were permitted by the Terms of Service. The implied-covenant
+
+              2 claim fails for this reason.
+
+              3 Regarding the last element — that the defendant’s conduct harmed the plaintiff — “[c]ausation
+
+              4 of damages in contract cases, as in tort cases, requires that the damages be proximately caused by
+
+              5 the defendant’s breach, and that their causal occurrence be at least reasonably certain.” Siqueiros
+
+              6 v. Fed. Nat’l Mortg. Ass’n, No. EDCV 13-01789-VAP (DTBx), 2014 WL 3015734, at *5 (C.D.
+
+              7 Cal. June 27, 2014) (quoting Vu v. Cal. Commerce Club, Inc., 58 Cal. App. 4th 229, 233 (1997)).
+
+              8 “‘The test for causation in a breach of contract action is whether the breach was a substantial
+
+              9 factor in causing the damages.’” Id. (cleaned up) (quoting US Ecology, Inc. v. State, 129 Cal. App.
+
+              10 4th 887, 909 (2005)). “‘[M]ere conclusory statements do not suffice’ to sufficiently state a breach
+
+              11 of contract cause of action.” Ketab Corp. v. Mesriani & Assocs., P.C., 734 F. App’x 401, 410 (9th
+
+              12 Cir. May 2, 2018) (cleaned up) (quoting Iqbal, 556 U.S. at 678); accord, e.g., Low v. LinkedIn
+
+              13 Corp., 900 F. Supp. 2d 1010, 1029 (N.D. Cal. 2012). The limitation-on-liability provision
+
+              14 forecloses relief (as discussed above). 15
+
+              16 3. Unjust Enrichment
+
+              17 Courts in this district have allowed standalone claims for unjust enrichment (even if there is a
+
+              18 contract claim) to allow recovery of restitution “either (1) in lieu of breach of contract damages,
+
+              19 where an asserted contract is found to be unenforceable or ineffective, or (2) where the defendant
+
+              20 obtained a benefit from the plaintiff by fraud, duress, conversion, or similar conduct, but the
+
+              21 plaintiff has chosen not to sue in tort.” Oracle Corp. v. SAP AG, No. C 07-1658 PJH, 2008 WL
+
+              22 5234260, at *8 (N.D. Cal. Dec. 15, 2008) (citing McBride v. Boughton, 123 Cal. App. 4th 379,
+
+              23	388 (2004)); see also Wolf v. Wells Fargo Bank, N.A., No. C 11-01337-WHA, 2011 WL 4831208,
+
+              24 at *8 (N.D. Cal. Oct. 12, 2011) (“Restitution [under an unjust-enrichment theory] may be awarded
+
+              25 in lieu of breach of contract damages when the parties had an express contract, but it was procured
+
+              26 by fraud or is unenforceable or ineffective for some reason.”); Yothers v. JFC Int’l, Inc., No. 20- 27	cv-01657-RS, 2020 WL 5015262, at *6 (N.D. Cal. May 14, 2020).
+
+
+
+
+
+
+              1 The parties have an enforceable contact. There are no allegations about benefits obtained by
+
+              2 fraud, duress, or the like. The plaintiffs did not plausibly plead a claim for unjust enrichment. 3
+
+              4 4. Conversion
+
+              5 “[A]ny act of dominion wrongfully exerted over the personal property of another inconsistent
+
+              6 with the owner’s rights thereto constitutes conversion.” Mindys Cosmetics, Inc. v. Dakar, 611 F.3d 7	590, 601 (9th Cir. 2010) (quoting McCafferty v. Gilbank, 249 Cal. App. 2d 569, 576 (1967)). To
+
+              8 prove conversion, a plaintiff must establish: (1) “ownership of or right to possess the property in
+
+              9 question at the time of the conversion, (2) that the defendant disposed of the plaintiff’s property
+
+              10 rights or converted the property by a wrongful act, and (3) damages.” Swingless Golf Club Corp.
+
+              11 v. Taylor, 732 F. Supp. 2d 899, 910 (N.D. Cal. 2010) (citing Oakdale Village Grp. v. Fong, 43 12	Cal. App. 4th 539, 544 (1996)).
+
+              13 The plaintiffs have not plausibly alleged a wrongful act. As discussed above, the Agreement
+
+              14 did not require YouTube to host content. In King, the court dismissed a conversion claim based on
+
+              15 Facebook’s failure to retain her content because “Facebook was not under any obligation not to
+
+              16 destroy (or to otherwise retain) the content associated with her account.” 572 F. Supp. 3d at 792.
+
+              17 The court dismisses the claim.
+
+              18 CONCLUSION
+
+              19 The court dismisses the complaint. The contract bars the claims as a matter of law. The
+
+              20 dismissal thus is without leave to amend.
+
+              21 This disposes of ECF Nos. 25 and 30.
+
+              22 IT IS SO ORDERED.
+
+              23 Dated: September 4, 2023 24
+
+              LAUREL BEELER
+
+              25	United States Magistrate Judge
+          visualData: -382.97292405107106/-320.65871559611395/300/167
+        '[ZMa5vABsThPZfGH0aTrwQ]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 613.7339038958476
+            text: >-
+              #### 1. Input Nodes will prompt for some input on run.
+
+
+              ##### These are at the beginning of our chain, but they can take inputs and provide more interactivity later in the chain as well.
+          visualData: 136.51374116314437/-311.6926235948832/479/155
+        '[bJCNK3cQp-KiH7tE8od4Z]:userInput "User Questions"':
+          data:
+            prompt: Ask your questions here
+            useInput: false
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Text" gLuOSTWr411YV59Bf97G3/question
+          visualData: 266.5642824439977/-119.1315031277641/250/146
+        '[gLuOSTWr411YV59Bf97G3]:text "Text"':
+          data:
+            text: >-
+              You are an expert Legal Analyst who pays close attention to
+              details. In particular, the parties, legal claims, legal
+              reasoning, arguments, and conclusions reached within the document.
+
+
+              The Document you are provided is a portion of a larger text. Use only information from the Document to answer the question as best as you can. You can provide a partial answer if it appears some information necessary to answer is missing, since this is a portion of a larger text.
+
+
+              Question: {{question}}
+
+
+              <Document>{{text}}</Document>
+
+
+              <Source>Section {{indice}} of {{count}}</Source>
+          isSplitRun: true
+          outgoingConnections:
+            - output->"Chat" ymTSaelVAzeLJljUKNgKx/prompt
+          visualData: 1091.1075855887386/-113.93524481818403/300/156
+        '[m79t2xMtbSDl2jXbmbztx]:userInput "Doc Input"':
+          data:
+            prompt: Paste the Document you want summarized here.
+            useInput: false
+          outgoingConnections:
+            - output->"Chunk" ThqGIxtWpXglesYLSL1gh/input
+          visualData: 267.86474816402136/78.95769771880528/250/151
+        '[rN8yhHHSjwpvU78OYp6v-]:text "Text"':
+          data:
+            text: |-
+              Section {{indice}} of {{count}}:
+
+              {{llm_response}}
+          isSplitRun: true
+          visualData: 1677.6176774671785/134.39682626615678/300/164
+        '[ymTSaelVAzeLJljUKNgKx]:chat "Chat"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 1024
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          isSplitRun: true
+          outgoingConnections:
+            - response->"Text" rN8yhHHSjwpvU78OYp6v-/llm_response
+          visualData: 1440.9727314491186/-49.6461708477138/200/157
+    bdfHQpT7Og6IvC70YQLF5:
+      metadata:
+        description: ""
+        id: bdfHQpT7Og6IvC70YQLF5
+        name: Very Simple Chatbot
+      nodes:
+        '[-6BWM4DV-tCZcsWyPbWaZ]:assemblePrompt "Assemble Prompt"':
+          outgoingConnections:
+            - prompt->"Chatbot" fnabPtSovYCIkNtB_uGWD/prompt
+          visualData: 1707.3175989820043/-96.9173321210204/302.37046296802964/213
+        '[1u_HjPZyiS6k2fbJfCR6o]:userInput "User Input"':
+          data:
+            prompt: User asks some question they would like help with.
+            useInput: true
+          outgoingConnections:
+            - output->"Assemble Prompt" -6BWM4DV-tCZcsWyPbWaZ/message2
+            - output->"Chat History" mrI5tCN2Ze_IAee-uvKbE/message2
+          visualData: 1299.1305964054354/168.439069850499/250/211
+        '[6GtrzkeBb5wOTdY5Rk2qs]:text "1. Initial Prompt"':
+          data:
+            text: Greet the User, then ask how you can assist them with legal analysis, or
+              other problems.
+          outgoingConnections:
+            - output->"1. Legal Bot Greeting" zoNka9Zka60EMB1e1Jctp/prompt
+          visualData: -467.6825829718357/111.3775349627634/361.0988734627015/192
+        '[A4wV-pdoAOsAyPI-Phz6a]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 853.16677605392
+            text: "#### Finally, the previous messages, the user message, and the Chatbot
+              response are assembled to complete the Chat History loop, which is
+              returned to the Loop Controller to begin the next chat exchange."
+          visualData: 2048.6011499320043/-461.2639500544093/752.1624146230815/220
+        '[LoOlCEgkzpf0hM4nw_zyp]:prompt "1. Legal Bot"':
+          data:
+            enableFunctionCall: false
+            promptText: "You are a helpful legal analyst who is detail oriented, and pays
+              close attention to arguments, reasoning, and conclusions of the
+              court. "
+            type: system
+            useTypeInput: false
+          outgoingConnections:
+            - output->"1. Legal Bot Greeting" zoNka9Zka60EMB1e1Jctp/systemPrompt
+          visualData: -465.1204728110277/-99.4035507631796/360.97550486082525/193
+        '[Q26JH781wCT2TJ-J8Zx4T]:prompt "Advice System Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: If the User has provided a legal question, do not provide a direct
+              answer. Instead, propose an analytical framework for understand
+              the question or problem from the User, or a systematic approach
+              that breaks down the issue into smaller steps.
+            type: system
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chatbot" fnabPtSovYCIkNtB_uGWD/systemPrompt
+          visualData: 1706.1110158656138/-323.27775838484575/301.1235471830769/200
+        '[SQG5urCHt-B5poR2NUo6z]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 672
+            text: >-
+              #### Doing an initial call in order to write a greeting to the
+              User for the first question we ask.
+
+              ##### For these inputs, you could provide background information, or documents of some kind.
+          visualData: -501.5230372010535/-366.01748263878727/1123.519581591347/194
+        '[bM_frBZlejuAJmc-_BhIG]:loopController "Loop Controller"':
+          data:
+            maxIterations: 8
+          outgoingConnections:
+            - break->"Graph Output" yKv-nZLgKC8zqeA4buT0w/value
+            - output1->"User Input" 1u_HjPZyiS6k2fbJfCR6o/questions
+            - output2->"Assemble Prompt" -6BWM4DV-tCZcsWyPbWaZ/message1
+            - output2->"Chat History" mrI5tCN2Ze_IAee-uvKbE/message1
+          visualData: 783.2660704347668/-34.6808978016724/327.1514607685542/63
+        '[bpp9qisghRoTpoygHM69t]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 671.7030541242821
+            text: "#### Loop Controller is the master of ceremonies"
+          visualData: 627.0906899811914/-364.7705668538341/524.3089204713465/154
+        '[dNLXiuQaE7AF8IWE0xN5H]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: "{{input}}"
+            type: assistant
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Chat History" mrI5tCN2Ze_IAee-uvKbE/message3
+          visualData: 2356.49893518011/-155.46308442979802/250/203
+        '[fmjOk4m64JbMeXwXzJXqo]:prompt "Prompt"':
+          data:
+            enableFunctionCall: false
+            promptText: "{{input}}"
+            type: assistant
+            useTypeInput: false
+          outgoingConnections:
+            - output->"Loop Controller" bM_frBZlejuAJmc-_BhIG/input1Default
+            - output->"Loop Controller" bM_frBZlejuAJmc-_BhIG/input2Default
+          visualData: 327.1049100405158/-12.80889925497566/250/190
+        '[fnabPtSovYCIkNtB_uGWD]:chat "Chatbot"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 512
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0.5
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Loop Controller" bM_frBZlejuAJmc-_BhIG/input1
+            - response->"Prompt" dNLXiuQaE7AF8IWE0xN5H/input
+          visualData: 2063.0057510592274/-274.2262297578133/200/201
+        '[gJZa2EU4A5zv6t5t8jzjM]:comment "Comment"':
+          data:
+            backgroundColor: rgba(0,0,0,0.05)
+            color: rgba(255,255,255,1)
+            height: 911.5692477165219
+            text: >-
+              #### User Input Node collects your question. It is assembled with
+              the previous messages for the prompt to the Chatbot.
+
+              ##### The Advice System Message here provides some custom instructions to the Chatbot behavior. You could provide context documents, or dynamically determined instructions, or experiment with different prompts here.
+          visualData: 1213.9000107797883/-522.6183195760975/821.6732616872878/219
+        '[mrI5tCN2Ze_IAee-uvKbE]:assemblePrompt "Chat History"':
+          outgoingConnections:
+            - prompt->"Loop Controller" bM_frBZlejuAJmc-_BhIG/input2
+          visualData: 2350.9991940434334/122.65093004460672/250/204
+        '[yKv-nZLgKC8zqeA4buT0w]:graphOutput "Graph Output"':
+          data:
+            dataType: string
+            id: output
+          visualData: 1296.357012813626/-276.2848632771429/300/214
+        '[zoNka9Zka60EMB1e1Jctp]:chat "1. Legal Bot Greeting"':
+          data:
+            cache: false
+            enableFunctionUse: false
+            frequencyPenalty: 0
+            maxTokens: 100
+            model: gpt-3.5-turbo
+            presencePenalty: 0
+            stop: ""
+            temperature: 0
+            top_p: 1
+            useAsGraphPartialOutput: true
+            useFrequencyPenaltyInput: false
+            useMaxTokensInput: false
+            useModelInput: false
+            usePresencePenaltyInput: false
+            useStop: false
+            useStopInput: false
+            useTemperatureInput: false
+            useTopP: false
+            useTopPInput: false
+            useUseTopPInput: false
+            useUserInput: false
+          outgoingConnections:
+            - response->"Prompt" fmjOk4m64JbMeXwXzJXqo/input
+          visualData: -40.69957668446123/-21.015924223684678/318.0865366025139/191
+  metadata:
+    description: ""
+    id: -iPBk6LII9eOiSciPVn9s
+    title: Simple Rivet Examples
