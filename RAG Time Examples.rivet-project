@@ -3153,7 +3153,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Chatbot" 3ZDQjaMecIACtKw5tNMcM/systemPrompt
-          visualData: 2030.5615837742134/-335.44864365901896/301.1235471830769/324
+          visualData: 1968.0030418428985/-353.7584608096477/301.1235471830769/329
         '[3ZDQjaMecIACtKw5tNMcM]:chat "Chatbot"':
           data:
             cache: false
@@ -3180,11 +3180,11 @@ data:
           outgoingConnections:
             - response->"Prompt" 9jAczR4xjdPmQ2gC3eVI4/input
             - response->"Text" RyZ1dsGsw2KCbtp7Z4s_2/input
-          visualData: 2435.7173671919877/-152.44632066565845/200/309
+          visualData: 2394.520278603073/-51.74232633720035/200/332
         '[9H1wvFHuYmo_PjzTq100x]:assemblePrompt "Chat History"':
           outgoingConnections:
             - prompt->"Loop Controller" j5pof5fsAmsTAGrl6eorc/input2
-          visualData: 3239.7579901659883/235.22704422013035/250/274
+          visualData: 3068.866363426787/223.02049945304452/250/336
         '[9jAczR4xjdPmQ2gC3eVI4]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -3193,7 +3193,7 @@ data:
             useTypeInput: false
           outgoingConnections:
             - output->"Chat History" 9H1wvFHuYmo_PjzTq100x/message3
-          visualData: 2787.8834162369276/-19.939944835380388/250/314
+          visualData: 2708.5408752508697/30.41205232884866/250/333
         '[JKWWvRRp6NCkWmzmEHx9-]:graphOutput "Graph Output"':
           data:
             dataType: string
@@ -3219,7 +3219,7 @@ data:
             - output->"Chat History" 9H1wvFHuYmo_PjzTq100x/message2
             - output->"Subgraph" tgZ58m-0bB39v-eP82Lys/input
             - output->"Text" auMl4QrxsXHwMbq-e6Wu3/user input
-          visualData: 1238.314789516989/27.657991210178068/250/322
+          visualData: 1274.9344238182466/-31.848914529365352/250/325
         '[RyZ1dsGsw2KCbtp7Z4s_2]:text "Text"':
           data:
             text: |+
@@ -3229,11 +3229,11 @@ data:
 
           outgoingConnections:
             - output->"Join" gTKxkf7nTI8h4xFwAKzJd/input2
-          visualData: 2794.6493350116475/-251.3744617863023/248.5304436887659/315
+          visualData: 2719.8842483132466/-246.79700749864512/248.5304436887659/334
         '[VrTJldJ-ZE_WMCoNLV5sf]:assemblePrompt "Assemble Prompt"':
           outgoingConnections:
             - prompt->"Chatbot" 3ZDQjaMecIACtKw5tNMcM/prompt
-          visualData: 2035.7504361317751/217.54327038491115/302.37046296802964/311
+          visualData: 1642.089367393257/209.9141799054825/302.37046296802964/331
         '[W6OZDl-aZ_6cEh5KN2Tx5]:text "1. Initial Prompt"':
           data:
             text: Greet the User, then ask how you can assist them with any questions about
@@ -3252,7 +3252,7 @@ data:
               {{user input}}
           outgoingConnections:
             - output->"Join" gTKxkf7nTI8h4xFwAKzJd/input1
-          visualData: 1656.7957067687084/309.8345550281755/330/323
+          visualData: 1620.176072467451/396.80618649366204/330/326
         '[dxi7-W_NlYnAG5Vm2qSl_]:prompt "Prompt"':
           data:
             enableFunctionCall: false
@@ -3302,7 +3302,7 @@ data:
             joinString: "\n"
           outgoingConnections:
             - output->"Loop Controller" j5pof5fsAmsTAGrl6eorc/input1
-          visualData: 3158.5558519541573/-241.6964205600485/180/316
+          visualData: 3015.128950940899/-241.6964205600485/180/335
         '[j5pof5fsAmsTAGrl6eorc]:loopController "Loop Controller"':
           data:
             maxIterations: 8
@@ -3318,9 +3318,13 @@ data:
             backgroundColor: rgba(0,0,0,0.05)
             color: rgba(255,255,255,1)
             height: 1138.8840794194218
-            text: "#### Finally, the previous messages, the user message, and the Chatbot
-              response are assembled to complete the Chat History loop, which is
-              returned to the Loop Controller to begin the next chat exchange."
+            text: >-
+              #### Finally, the previous messages, the user message, and the
+              Chatbot response are assembled to complete the Chat History loop,
+              which is returned to the Loop Controller to begin the next chat
+              exchange.
+
+              ##### The Model output is also joined with the previous User Input Question and Answer to assemble a running chat log for the User Input Node.
           visualData: 2358.1854639146945/-516.0707424819668/1220.0796326245463/267
         '[nunt8kA6NSBMcK7jrLMB9]:comment "Comment"':
           data:
@@ -3342,7 +3346,7 @@ data:
               #### User Input Node collects your question. It is assembled with
               the previous messages for the prompt to the Chatbot.
 
-              ##### The Advice System Message here provides some custom instructions to the Chatbot behavior. You could provide context documents, or dynamically determined instructions, or experiment with different prompts here.
+              ##### The User Question is then sent to a Subgraph that performs Vector Retrieval against a database after embedding the question. The Documents are assembled and returned as system message for the Chat API call.
           visualData: 1213.9000107797883/-522.6183195760975/1133.4988271836596/219
         '[tgZ58m-0bB39v-eP82Lys]:subGraph "Subgraph"':
           data:
@@ -3351,7 +3355,7 @@ data:
             useErrorOutput: false
           outgoingConnections:
             - output->"Augment System Prompt" -o2Kv2-JWU2Zq0BwN4Dor/Documents
-          visualData: 1648.0311001272983/-110.66531765896114/330/321
+          visualData: 1594.6274667712976/-128.9751348095899/330/337
   metadata:
     description: ""
     id: -iPBk6LII9eOiSciPVn9s
